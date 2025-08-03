@@ -1,6 +1,6 @@
 # Auto Tab Grouper
 
-A Chrome extension that automatically groups tabs based on URL patterns and domain names.
+A Chrome extension that automatically groups tabs based on URL patterns and domain names with intelligent group management.
 
 ## Features
 
@@ -9,6 +9,10 @@ A Chrome extension that automatically groups tabs based on URL patterns and doma
 - **Domain-based Grouping**: Falls back to domain-based grouping when no custom rules match
 - **Enable/Disable**: Toggle automatic grouping on/off
 - **Manual Grouping**: Group all existing tabs with a single click
+- **Smart Group Management**: Automatically collapses other groups when a new group is created or expanded
+- **Tab Count Display**: Shows the number of tabs in each group title (e.g., "Social Media (5)")
+- **Auto Focus**: Automatically switches focus to newly created tabs, even across windows
+- **Special Page Protection**: Skips grouping for new tabs, settings pages, and other Chrome internal pages
 
 ## Installation
 
@@ -27,6 +31,13 @@ A Chrome extension that automatically groups tabs based on URL patterns and doma
 3. Click "Group All Tabs Now" to manually group existing tabs
 4. Click "Open Settings" to configure custom grouping rules
 
+### Smart Group Management
+
+- **Auto-Collapse**: When you create a new group or expand an existing one, other groups automatically collapse
+- **Focus Management**: New tabs automatically receive focus, even if they're grouped in different windows
+- **Tab Counting**: Each group shows the total number of tabs in its title (e.g., "Social Media (5)")
+- **Special Page Handling**: New tabs, settings pages, and Chrome internal pages are never grouped
+
 ### Custom Rules
 
 1. Open the settings page by clicking "Open Settings" in the popup
@@ -42,6 +53,13 @@ The extension comes with three default rules:
 - **Development**: Groups GitHub, StackOverflow, and MDN
 - **News**: Groups news sites and major news outlets
 
+### Group Behavior
+
+- **Automatic Collapse**: Only the active group stays expanded, others collapse automatically
+- **Manual Expansion**: Click any collapsed group to expand it and collapse others
+- **Real-time Counts**: Tab counts update automatically as you open and close tabs
+- **Cross-window Support**: Groups work across multiple Chrome windows
+
 ## Files
 
 - `manifest.json`: Extension configuration
@@ -49,18 +67,7 @@ The extension comes with three default rules:
 - `popup.html` & `popup.js`: Extension popup interface
 - `options.html` & `options.js`: Settings page for custom rules
 
-## Permissions
 
-- `tabs`: Required to access and group tabs
-- `storage`: Required to save user settings and rules
-- `host_permissions`: Required to access tab URLs for pattern matching
-
-## Troubleshooting
-
-- If tabs aren't grouping automatically, check that the extension is enabled
-- If custom rules aren't working, verify your regular expressions are correct
-- Try clicking "Group All Tabs Now" to manually group existing tabs
-- Check the browser console for any error messages
 
 ## Development
 
@@ -71,6 +78,3 @@ To modify the extension:
 3. Click the refresh icon on the extension card
 4. Test your changes
 
-## License
-
-This project is open source and available under the MIT License. 

@@ -141,8 +141,7 @@ chrome.tabGroups.onUpdated.addListener((group) => {
 
 // Listen for tab removal to update group titles
 chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
-  console.log("onRemoved", tabId, removeInfo);
-  
+
   try {
     const groupId = tabGroupMap.get(tabId);
     if (groupId) {
@@ -163,12 +162,10 @@ async function groupTab(tab) {
     const config = await chrome.storage.sync.get(['isEnabled', 'rules']);
     
     if (!config.isEnabled) return;
-    console.log("isEnabled", config.isEnabled);
     
     const groupName = getGroupName(tab.url, config.rules);
     
     if (groupName) {
-      console.log("groupName", groupName);
       try {
           // Check if a group with this name already exists
           const groups = await chrome.tabGroups.query({});
@@ -177,7 +174,6 @@ async function groupTab(tab) {
             const baseTitle = group.title.replace(/\s*\(\d+\)$/, '');
             return baseTitle === groupName;
           });
-          console.log("existingGroup", existingGroup);
           
           if (!existingGroup) {
             // Create new group
