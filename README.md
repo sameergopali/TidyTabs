@@ -2,6 +2,11 @@
 
 A Chrome extension that automatically groups tabs based on URL patterns and domain names with intelligent group management.
 
+## Demo
+
+![Auto Tab Grouper Demo](assets/demo.gif)
+
+
 ## Features
 
 - **Automatic Tab Grouping**: Automatically groups tabs based on custom URL patterns
