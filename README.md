@@ -1,4 +1,4 @@
-# Auto Tab Grouper
+# TidyTabs
 
 A Chrome extension that automatically groups tabs based on URL patterns and domain names with intelligent group management.
 
