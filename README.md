@@ -45,14 +45,6 @@ A Chrome extension that automatically groups tabs based on URL patterns and doma
 3. Use regular expressions for URL patterns (e.g., `.*github\\.com.*`)
 4. Save your settings to apply the new rules
 
-### Default Rules
-
-The extension comes with three default rules:
-
-- **Social Media**: Groups Facebook, Twitter, Instagram, and LinkedIn
-- **Development**: Groups GitHub, StackOverflow, and MDN
-- **News**: Groups news sites and major news outlets
-
 ### Group Behavior
 
 - **Automatic Collapse**: Only the active group stays expanded, others collapse automatically
@@ -60,21 +52,4 @@ The extension comes with three default rules:
 - **Real-time Counts**: Tab counts update automatically as you open and close tabs
 - **Cross-window Support**: Groups work across multiple Chrome windows
 
-## Files
-
-- `manifest.json`: Extension configuration
-- `background.js`: Service worker that handles tab grouping logic
-- `popup.html` & `popup.js`: Extension popup interface
-- `options.html` & `options.js`: Settings page for custom rules
-
-
-
-## Development
-
-To modify the extension:
-
-1. Make your changes to the source files
-2. Go to `chrome://extensions/`
-3. Click the refresh icon on the extension card
-4. Test your changes
 
