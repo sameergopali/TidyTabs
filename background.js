@@ -5,22 +5,11 @@ let isEnabled = true;
 function isSpecialPage(url) {
   if (!url) return true;
   
-  const specialPages = [
-    'chrome://newtab/',
-    'chrome://new-tab-page/',
-    'chrome://startup/',
-    'chrome://welcome/',
-    'chrome://extensions/',
-    'chrome://settings/',
-    'chrome://history/',
-    'chrome://bookmarks/',
-    'chrome://downloads/',
-    'about:newtab',
-    'about:blank',
-    'about:home'
-  ];
   
-  return specialPages.some(specialPage => url.startsWith(specialPage));
+  // Only consider special pages if the URL does not start with http or https
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return true;
+  }
 }
 
 // Collapse all groups except the specified one
